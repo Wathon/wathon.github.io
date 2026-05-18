@@ -806,6 +806,42 @@ main {
 
 .timeline { margin-bottom: 30px; }
 
+.resume-summary,
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.resume-summary .h3,
+.resume-section .h3 {
+  margin-bottom: 15px;
+}
+
+.resume-highlights {
+  display: grid;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.resume-highlights li {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  padding-left: 18px;
+  position: relative;
+}
+
+.resume-highlights li::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange-yellow-crayola);
+}
+
 .timeline .title-wrapper {
   display: flex;
   align-items: center;
@@ -900,12 +936,29 @@ main {
   border-radius: inherit;
 }
 
+.skill-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag-list li {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1;
+  padding: 9px 12px;
+  border: 1px solid var(--jet);
+  border-radius: 8px;
+  background: var(--eerie-black-1);
+}
+
 
 
 
 
 /*-----------------------------------*\
-  #PORTFOLIO
+  #PROJECTS
 \*-----------------------------------*/
 
 .filter-list { display: none; }
@@ -1043,13 +1096,13 @@ main {
 .project-item > a:hover img { transform: scale(1.1); }
 
 .project-title,
-.project-category { margin-left: 10px; }
+.project-category,
+.project-summary { margin-left: 10px; }
 
 .project-title {
   color: var(--white-2);
   font-size: var(--fs-5);
   font-weight: var(--fw-400);
-  text-transform: capitalize;
   line-height: 1.3;
 }
 
@@ -1057,6 +1110,14 @@ main {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-300);
+}
+
+.project-summary {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-top: 8px;
 }
 
 
@@ -1638,9 +1699,10 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .filter-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
     align-items: center;
-    gap: 25px;
+    gap: 14px 22px;
     padding-left: 5px;
     margin-bottom: 30px;
   }
