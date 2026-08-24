@@ -22,10 +22,10 @@
               <time datetime="2025-01-15">Jan 15, 2025</time>
             </div>
 
-            <h3 class="h3 blog-item-title">Building an On-Premises Lakehouse: Spark, Iceberg & Nessie in Production</h3>
+            <h3 class="h3 blog-item-title">Building an Iceberg Lakehouse on AWS S3: Glue Catalog & Compaction in Production</h3>
 
             <p class="blog-text">
-              Why traditional data warehouses struggle with schema evolution in banking, and how implementing Git-like catalog branching with Project Nessie eliminates production pipeline staging risks.
+              Why traditional data warehouses struggle with schema evolution in banking, and how implementing Apache Iceberg on Amazon S3 with Glue Catalog & Nessie branching eliminates pipeline staging risks.
             </p>
           </div>
         </a>
@@ -33,20 +33,20 @@
         <!-- Hidden Detail Payload for Modal -->
         <div class="blog-modal-payload" id="payload-lakehouse-nessie-iceberg" style="display: none;">
           <div class="blog-detail-header">
-            <span class="project-badge">Data Platform Architecture</span>
-            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Building an On-Premises Lakehouse: Lessons from Spark, Iceberg, and Nessie in Banking</h3>
-            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">Published Jan 15, 2025 &bull; Technical Deep Dive</p>
+            <span class="project-badge">AWS Lakehouse Architecture</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Building an Iceberg Lakehouse on AWS S3: Lessons from Glue, Spark, and Nessie in Banking</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">Published Jan 15, 2025 &bull; AWS Technical Deep Dive</p>
           </div>
 
           <div style="margin-top: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.7;">
             <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Regulated Banking Challenge</h4>
             <p style="margin-bottom: 14px;">
-              In enterprise financial institutions, data platforms must comply with strict auditability, zero-data-loss guarantees, and air-gapped on-premise infrastructure constraints. Traditional Hive metastores and relational warehouses struggle when ETL jobs require non-blocking schema evolution or isolated pipeline staging.
+              In enterprise financial institutions, data platforms must comply with strict auditability, zero-data-loss guarantees, and cloud security isolation. Traditional Hive metastores and isolated databases struggle when ETL jobs require non-blocking schema evolution or isolated pipeline staging.
             </p>
 
-            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Architecture: Decoupled Lakehouse Stack</h4>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Architecture: Decoupled AWS Lakehouse Stack</h4>
             <p style="margin-bottom: 14px;">
-              To solve this, we architected a modern Lakehouse on Kubernetes combining <strong>MinIO</strong> (S3-compatible distributed object storage), <strong>Apache Iceberg</strong> (ACID table format), <strong>Project Nessie</strong> (transactional Git-like catalog), <strong>Apache Spark</strong> (batch compute), and <strong>Trino</strong> (distributed SQL query engine).
+              To solve this, we architected a modern Lakehouse combining <strong>Amazon S3 / MinIO</strong> (distributed object storage), <strong>Apache Iceberg</strong> (ACID table format), <strong>AWS Glue Data Catalog / Project Nessie</strong> (transactional catalog), <strong>Apache Spark on EMR / Kubernetes</strong> (batch compute), and <strong>Trino</strong> (distributed SQL query engine).
             </p>
 
             <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Why the Manual is Wrong: Catalog Branching in Production</h4>
