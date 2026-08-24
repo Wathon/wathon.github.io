@@ -31,7 +31,80 @@
 
     <ul class="project-list">
 
-      <!-- PROJECT 1: KBZ Bank AWS Pipeline (TOP FLAGSHIP) -->
+      <!-- PROJECT 1: AYA Bank Lakehouse (2024 - 2025) -->
+      <li class="project-item active" data-filter-item data-category="cloud lakehouse & pipelines">
+        <a href="javascript:void(0)" data-project-card="aya-lakehouse">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-2.png" alt="Enterprise Data Lakehouse Platform" loading="lazy">
+          </figure>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-left: 10px; margin-right: 10px;">
+            <h3 class="project-title" style="margin-left: 0;">Enterprise Lakehouse Platform</h3>
+            <span style="background: hsla(45, 100%, 72%, 0.15); color: var(--orange-yellow-crayola); font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 500;">Flagship Case Study</span>
+          </div>
+          <p class="project-category">2024 - 2025 | AYA Bank PCL</p>
+          <p class="project-summary">Medallion Lakehouse on Kubernetes/EKS using Spark, Iceberg, Nessie, MinIO/S3, Trino, and dbt. Solved small-file metadata bloat, container OOMs, and enabled catalog branching for banking analytics.</p>
+        </a>
+
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="project-modal-payload" id="payload-aya-lakehouse" style="display: none;">
+          <div class="project-detail-header">
+            <span class="project-badge">Lakehouse Deep-Dive</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Enterprise Medallion Lakehouse Platform</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">AYA Bank PCL &bull; Oct 2024 - Aug 2025 &bull; Data Platform Engineer</p>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tech-pill">Apache Spark (PySpark)</span>
+              <span class="tech-pill">Apache Iceberg</span>
+              <span class="tech-pill">Project Nessie</span>
+              <span class="tech-pill">Trino</span>
+              <span class="tech-pill">MinIO / S3 Storage</span>
+              <span class="tech-pill">Amazon EKS / K8s</span>
+              <span class="tech-pill">Apache Airflow</span>
+              <span class="tech-pill">dbt Core</span>
+              <span class="tech-pill">OpenMetadata</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">SQL</span>
+            </div>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">1. Context & Architecture</h4>
+            <p style="color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              Architected a Medallion Lakehouse (Bronze &rarr; Silver &rarr; Gold) to modernize core banking reporting and decouple high-load analytical queries from operational transactional databases. MinIO/S3 provided object storage, Apache Iceberg handled ACID table formats, and Trino served as the distributed federated query engine.
+            </p>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">2. Production Hardships & "Why the Manual is Wrong"</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li style="margin-bottom: 8px;">
+                <strong style="color: var(--orange-yellow-crayola);">The Small File Problem in Iceberg:</strong> High-frequency batch ingestion created millions of tiny Parquet files, degrading Trino metadata lookup speeds. <em>Solution:</em> Engineered automated Spark compaction routines using bin-pack/sort strategies alongside scheduled snapshot expiration and orphan file cleanups.
+              </li>
+              <li style="margin-bottom: 8px;">
+                <strong style="color: var(--orange-yellow-crayola);">Spark Executor OOMs on Container Clusters:</strong> Heavy wide-transformations and skewed data partitions triggered JVM container evictions. <em>Solution:</em> Tuned off-heap memory headroom (`spark.memory.offHeap.size`), optimized shuffle partitions dynamically, and applied broadcast join hints.
+              </li>
+              <li>
+                <strong style="color: var(--orange-yellow-crayola);">Pipeline Staging & Catalog Governance:</strong> Deployed Project Nessie to implement Git-like data branching. Engineers could stage, validate, and test ETL runs on feature branches before atomic fast-forward merges to the `main` branch, eliminating production table lockouts.
+              </li>
+            </ul>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">3. Measurable Impact</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li>Reduced batch reporting generation time from hours to minutes.</li>
+              <li>Achieved sub-second query latency for concurrent BI analytical queries over multi-terabyte datasets.</li>
+              <li>Established zero-loss ACID compliance, meeting central banking audit requirements.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- PROJECT 2: KBZ Bank AWS Pipeline (2023 - 2024) -->
       <li class="project-item active" data-filter-item data-category="aws data platforms">
         <a href="javascript:void(0)" data-project-card="kbz-aws-pipeline">
           <figure class="project-img">
@@ -98,79 +171,6 @@
               <li>Maintained a 99.9% data delivery SLA for compliance and regulatory reporting.</li>
               <li>Reduced downstream BI query latency by 45% through Redshift key optimization.</li>
               <li>Zero duplicated transaction records and automated isolation of schema anomalies.</li>
-            </ul>
-          </div>
-        </div>
-      </li>
-
-      <!-- PROJECT 2: AYA Bank Lakehouse -->
-      <li class="project-item active" data-filter-item data-category="cloud lakehouse & pipelines">
-        <a href="javascript:void(0)" data-project-card="aya-lakehouse">
-          <figure class="project-img">
-            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-            <img src="./assets/images/project-2.png" alt="Enterprise Data Lakehouse Platform" loading="lazy">
-          </figure>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-left: 10px; margin-right: 10px;">
-            <h3 class="project-title" style="margin-left: 0;">Enterprise Lakehouse Platform</h3>
-            <span style="background: hsla(45, 100%, 72%, 0.15); color: var(--orange-yellow-crayola); font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 500;">Lakehouse Case Study</span>
-          </div>
-          <p class="project-category">2024 - 2025 | AYA Bank PCL</p>
-          <p class="project-summary">Medallion Lakehouse on Kubernetes/EKS using Spark, Iceberg, Nessie, MinIO/S3, Trino, and dbt. Solved small-file metadata bloat, container OOMs, and enabled catalog branching for banking analytics.</p>
-        </a>
-
-        <!-- Hidden Detail Payload for Modal -->
-        <div class="project-modal-payload" id="payload-aya-lakehouse" style="display: none;">
-          <div class="project-detail-header">
-            <span class="project-badge">Lakehouse Deep-Dive</span>
-            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Enterprise Medallion Lakehouse Platform</h3>
-            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">AYA Bank PCL &bull; Oct 2024 - Aug 2025 &bull; Data Platform Engineer</p>
-          </div>
-
-          <div class="project-detail-section" style="margin-top: 18px;">
-            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
-            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-              <span class="tech-pill">Apache Spark (PySpark)</span>
-              <span class="tech-pill">Apache Iceberg</span>
-              <span class="tech-pill">Project Nessie</span>
-              <span class="tech-pill">Trino</span>
-              <span class="tech-pill">MinIO / S3 Storage</span>
-              <span class="tech-pill">Amazon EKS / K8s</span>
-              <span class="tech-pill">Apache Airflow</span>
-              <span class="tech-pill">dbt Core</span>
-              <span class="tech-pill">OpenMetadata</span>
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">SQL</span>
-            </div>
-          </div>
-
-          <div class="project-detail-section" style="margin-top: 18px;">
-            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">1. Context & Architecture</h4>
-            <p style="color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
-              Architected a Medallion Lakehouse (Bronze &rarr; Silver &rarr; Gold) to modernize core banking reporting and decouple high-load analytical queries from operational transactional databases. MinIO/S3 provided object storage, Apache Iceberg handled ACID table formats, and Trino served as the distributed federated query engine.
-            </p>
-          </div>
-
-          <div class="project-detail-section" style="margin-top: 18px;">
-            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">2. Production Hardships & "Why the Manual is Wrong"</h4>
-            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
-              <li style="margin-bottom: 8px;">
-                <strong style="color: var(--orange-yellow-crayola);">The Small File Problem in Iceberg:</strong> High-frequency batch ingestion created millions of tiny Parquet files, degrading Trino metadata lookup speeds. <em>Solution:</em> Engineered automated Spark compaction routines using bin-pack/sort strategies alongside scheduled snapshot expiration and orphan file cleanups.
-              </li>
-              <li style="margin-bottom: 8px;">
-                <strong style="color: var(--orange-yellow-crayola);">Spark Executor OOMs on Container Clusters:</strong> Heavy wide-transformations and skewed data partitions triggered JVM container evictions. <em>Solution:</em> Tuned off-heap memory headroom (`spark.memory.offHeap.size`), optimized shuffle partitions dynamically, and applied broadcast join hints.
-              </li>
-              <li>
-                <strong style="color: var(--orange-yellow-crayola);">Pipeline Staging & Catalog Governance:</strong> Deployed Project Nessie to implement Git-like data branching. Engineers could stage, validate, and test ETL runs on feature branches before atomic fast-forward merges to the `main` branch, eliminating production table lockouts.
-              </li>
-            </ul>
-          </div>
-
-          <div class="project-detail-section" style="margin-top: 18px;">
-            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">3. Measurable Impact</h4>
-            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
-              <li>Reduced batch reporting generation time from hours to minutes.</li>
-              <li>Achieved sub-second query latency for concurrent BI analytical queries over multi-terabyte datasets.</li>
-              <li>Established zero-loss ACID compliance, meeting central banking audit requirements.</li>
             </ul>
           </div>
         </div>
