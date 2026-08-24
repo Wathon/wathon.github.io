@@ -1,11 +1,18 @@
 <section class="skill">
-    <h3 class="h3 skills-title">My Skills</h3>
-    <ul class="skills-list content-card">
-      <li class="skills-item"><h5 class="h5">Python</h5><div class="skill-progress-fill" style="width: 90%;"></div></li>
-      <li class="skills-item"><h5 class="h5">SQL & ETL</h5><div class="skill-progress-fill" style="width: 85%;"></div></li>
-      <li class="skills-item"><h5 class="h5">AWS (Lambda, Glue, Redshift)</h5><div class="skill-progress-fill" style="width: 80%;"></div></li>
-      <li class="skills-item"><h5 class="h5">Apache Spark</h5><div class="skill-progress-fill" style="width: 75%;"></div></li>
-      <li class="skills-item"><h5 class="h5">Docker / K8s</h5><div class="skill-progress-fill" style="width: 70%;"></div></li>
-    </ul>
-  </section>
+  <h3 class="h3 skills-title">Technical Domains</h3>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px;">
+    <div style="background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 12px; padding: 18px;">
+      <h4 class="h4" style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-bottom: 10px;">Lakehouse Architecture</h4>
+      <p style="color: var(--light-gray); font-size: var(--fs-7); line-height: 1.6;">Apache Iceberg, Project Nessie, MinIO, Trino, Medallion Architecture, ACID Transactions</p>
+    </div>
+    <div style="background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 12px; padding: 18px;">
+      <h4 class="h4" style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-bottom: 10px;">Compute & Orchestration</h4>
+      <p style="color: var(--light-gray); font-size: var(--fs-7); line-height: 1.6;">Apache Spark, Airflow, dbt Core, AWS Glue, Lambda, Step Functions</p>
+    </div>
+    <div style="background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 12px; padding: 18px;">
+      <h4 class="h4" style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-bottom: 10px;">Infrastructure & Reliability</h4>
+      <p style="color: var(--light-gray); font-size: var(--fs-7); line-height: 1.6;">Kubernetes, Docker, OpenMetadata, CI/CD, JVM Resource Tuning, Banking SLAs</p>
+    </div>
+  </div>
+</section>
   

@@ -1,183 +1,199 @@
 <article class="blog" data-page="blog">
 
-    <header>
-      <h2 class="h2 article-title">Blog</h2>
-    </header>
+  <header>
+    <h2 class="h2 article-title">Engineering Articles & Notes</h2>
+  </header>
 
-    <section class="blog-posts">
+  <section class="blog-posts">
 
-      <ul class="blog-posts-list">
+    <ul class="blog-posts-list">
 
-        <li class="blog-post-item">
-          <a href="#">
+      <!-- ARTICLE 1 -->
+      <li class="blog-post-item">
+        <a href="javascript:void(0)" data-blog-card="lakehouse-nessie-iceberg">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/blog-1.jpg" alt="Building an On-Premises Lakehouse with Spark, Iceberg, and Nessie" loading="lazy">
+          </figure>
 
-            <figure class="blog-banner-box">
-              <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-              <p class="blog-text">
-                Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-              </p>
-
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Data Platform</p>
+              <span class="dot"></span>
+              <time datetime="2025-01-15">Jan 15, 2025</time>
             </div>
 
-          </a>
-        </li>
+            <h3 class="h3 blog-item-title">Building an On-Premises Lakehouse: Spark, Iceberg & Nessie in Production</h3>
 
-        <li class="blog-post-item">
-          <a href="#">
+            <p class="blog-text">
+              Why traditional data warehouses struggle with schema evolution in banking, and how implementing Git-like catalog branching with Project Nessie eliminates production pipeline staging risks.
+            </p>
+          </div>
+        </a>
 
-            <figure class="blog-banner-box">
-              <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-            </figure>
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="blog-modal-payload" id="payload-lakehouse-nessie-iceberg" style="display: none;">
+          <div class="blog-detail-header">
+            <span class="project-badge">Data Platform Architecture</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Building an On-Premises Lakehouse: Lessons from Spark, Iceberg, and Nessie in Banking</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">Published Jan 15, 2025 &bull; Technical Deep Dive</p>
+          </div>
 
-            <div class="blog-content">
+          <div style="margin-top: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.7;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Regulated Banking Challenge</h4>
+            <p style="margin-bottom: 14px;">
+              In enterprise financial institutions, data platforms must comply with strict auditability, zero-data-loss guarantees, and air-gapped on-premise infrastructure constraints. Traditional Hive metastores and relational warehouses struggle when ETL jobs require non-blocking schema evolution or isolated pipeline staging.
+            </p>
 
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Architecture: Decoupled Lakehouse Stack</h4>
+            <p style="margin-bottom: 14px;">
+              To solve this, we architected a modern Lakehouse on Kubernetes combining <strong>MinIO</strong> (S3-compatible distributed object storage), <strong>Apache Iceberg</strong> (ACID table format), <strong>Project Nessie</strong> (transactional Git-like catalog), <strong>Apache Spark</strong> (batch compute), and <strong>Trino</strong> (distributed SQL query engine).
+            </p>
 
-                <span class="dot"></span>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Why the Manual is Wrong: Catalog Branching in Production</h4>
+            <p style="margin-bottom: 14px;">
+              Standard Iceberg documentation suggests writing directly to tables and relying on snapshot rollbacks if an error occurs. In banking, rollbacks on live tables can interrupt active BI dashboards and central bank reporting queries.
+            </p>
+            <p style="margin-bottom: 14px;">
+              <strong>The Nessie Solution:</strong> We implemented Git-like branching for our ETL pipelines. The Airflow DAG creates an ephemeral branch (e.g., <code>branch-etl-daily-tx</code>), writes transformations via Spark, executes dbt data quality tests, and performs an atomic merge into the <code>main</code> branch only after all validation checks pass. If tests fail, the branch is dropped with zero impact on production queries.
+            </p>
 
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Mitigating the Small-File Problem</h4>
+            <p>
+              Frequent batch writes quickly generated hundreds of thousands of small Parquet files. We automated off-peak Spark compaction jobs using Iceberg's <code>rewrite_data_files</code> action with bin-pack strategies and tuned snapshot retention to 7 days, maintaining sub-second Trino query speeds across multi-terabyte analytical tables.
+            </p>
+          </div>
+        </div>
+      </li>
 
-              <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+      <!-- ARTICLE 2 -->
+      <li class="blog-post-item">
+        <a href="javascript:void(0)" data-blog-card="spark-k8s-tuning">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/blog-2.jpg" alt="Solving Spark Shuffle Spills and Memory OOMs on Kubernetes" loading="lazy">
+          </figure>
 
-              <p class="blog-text">
-                Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-              </p>
-
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Distributed Systems</p>
+              <span class="dot"></span>
+              <time datetime="2024-11-10">Nov 10, 2024</time>
             </div>
 
-          </a>
-        </li>
+            <h3 class="h3 blog-item-title">Why the Manual is Wrong: Solving Spark Shuffle Spills & OOMs on K8s</h3>
 
-        <li class="blog-post-item">
-          <a href="#">
+            <p class="blog-text">
+              A deep dive into JVM off-heap memory, container memory limits, dynamic partition coalescing, and managing skewed joins on containerized Spark clusters.
+            </p>
+          </div>
+        </a>
 
-            <figure class="blog-banner-box">
-              <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-            </figure>
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="blog-modal-payload" id="payload-spark-k8s-tuning" style="display: none;">
+          <div class="blog-detail-header">
+            <span class="project-badge">Systems & Tuning</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Why the Manual is Wrong: Solving Spark Shuffle Spills & Memory OOMs on Kubernetes</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">Published Nov 10, 2024 &bull; Production Post-Mortem</p>
+          </div>
 
-            <div class="blog-content">
+          <div style="margin-top: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.7;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Failure Mode</h4>
+            <p style="margin-bottom: 14px;">
+              When scaling batch ETL jobs across millions of transactional records, Spark executor pods on Kubernetes were intermittently terminated with <code>Exit Code 137 (OOMKilled)</code>. The standard advice in forums is simply to "increase <code>spark.executor.memory</code>", but doing so only delayed the crashes and doubled infrastructure costs.
+            </p>
 
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Understanding Kubernetes Memory vs. JVM Heaps</h4>
+            <p style="margin-bottom: 14px;">
+              Kubernetes memory limits enforce a hard container ceiling. Spark's memory footprint is not just the JVM heap (<code>spark.executor.memory</code>); it includes Netty network shuffle buffers, off-heap storage, and Python/C extension memory. When shuffle data spills to disk or fills Netty buffers faster than the OS can flush them, the Linux kernel terminates the pod.
+            </p>
 
-                <span class="dot"></span>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The 3-Step Production Remedy</h4>
+            <ol style="list-style: decimal; padding-left: 20px; margin-bottom: 14px;">
+              <li style="margin-bottom: 8px;">
+                <strong>Off-Heap Headroom:</strong> Increased <code>spark.kubernetes.memoryOverheadFactor</code> from the default 0.10 to 0.22, allocating explicit off-heap headroom for network shuffle buffers.
+              </li>
+              <li style="margin-bottom: 8px;">
+                <strong>Adaptive Query Execution (AQE):</strong> Enabled <code>spark.sql.adaptive.enabled=true</code> and <code>spark.sql.adaptive.coalescePartitions.enabled=true</code> to dynamically combine small post-shuffle partitions and automatically handle skewed join keys.
+              </li>
+              <li>
+                <strong>Broadcast Hints for Dimension Joins:</strong> Configured <code>spark.sql.autoBroadcastJoinThreshold=32MB</code> to eliminate expensive network shuffles during account metadata joins.
+              </li>
+            </ol>
 
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Outcome</h4>
+            <p>
+              Completely eliminated container eviction failures during peak daily batch windows while decreasing overall cluster memory consumption by 30%.
+            </p>
+          </div>
+        </div>
+      </li>
 
-              <h3 class="h3 blog-item-title">Design digest #80</h3>
+      <!-- ARTICLE 3 -->
+      <li class="blog-post-item">
+        <a href="javascript:void(0)" data-blog-card="aws-resilient-etl">
+          <figure class="blog-banner-box">
+            <img src="./assets/images/blog-3.jpg" alt="Designing Idempotent and Resilient ETL on AWS" loading="lazy">
+          </figure>
 
-              <p class="blog-text">
-                Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-              </p>
-
+          <div class="blog-content">
+            <div class="blog-meta">
+              <p class="blog-category">Cloud Architecture</p>
+              <span class="dot"></span>
+              <time datetime="2024-07-22">Jul 22, 2024</time>
             </div>
 
-          </a>
-        </li>
+            <h3 class="h3 blog-item-title">Designing Idempotent & Resilient ETL Pipelines on AWS Serverless</h3>
 
-        <li class="blog-post-item">
-          <a href="#">
+            <p class="blog-text">
+              Practical patterns for handling late-arriving event data, dead-letter retries, automated schema validation, and Redshift WLM concurrency tuning.
+            </p>
+          </div>
+        </a>
 
-            <figure class="blog-banner-box">
-              <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-            </figure>
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="blog-modal-payload" id="payload-aws-resilient-etl" style="display: none;">
+          <div class="blog-detail-header">
+            <span class="project-badge">Cloud Engineering</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Designing Idempotent and Resilient ETL Pipelines on AWS Serverless</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">Published Jul 22, 2024 &bull; Architecture Blueprint</p>
+          </div>
 
-            <div class="blog-content">
+          <div style="margin-top: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.7;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Reality of Distributed Cloud Ingestion</h4>
+            <p style="margin-bottom: 14px;">
+              In serverless event architectures (API Gateway &rarr; Lambda &rarr; S3 &rarr; Glue), network timeouts and upstream client retries inevitably generate duplicate event payloads. Without idempotent pipeline design, duplicated banking transactions can silently corrupt financial aggregates.
+            </p>
 
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">The Idempotency Key Pattern</h4>
+            <p style="margin-bottom: 14px;">
+              We implemented deterministic SHA-256 fingerprint hashing over natural transaction attributes (<code>account_number + timestamp + transaction_type + amount + external_ref</code>). This idempotency hash travels through the entire S3 bronze/silver hierarchy.
+            </p>
+            <p style="margin-bottom: 14px;">
+              During Redshift warehouse loading, we applied an atomic staging-table merge pattern within a single transaction block:
+              <br/>
+              <code>BEGIN; DELETE FROM target_table USING staging_table WHERE target_table.idempotency_hash = staging_table.idempotency_hash; INSERT INTO target_table SELECT * FROM staging_table; COMMIT;</code>
+            </p>
 
-                <span class="dot"></span>
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Graceful Failure & Dead-Letter Isolation</h4>
+            <p>
+              Schema drift and corrupt payloads are intercepted by AWS Lambda schema validators and routed directly to SQS Dead-Letter Queues (DLQ) with automated CloudWatch alerting. This isolates corrupted records immediately, allowing 99.9% of valid transaction traffic to process without blocking downstream reporting.
+            </p>
+          </div>
+        </div>
+      </li>
 
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
+    </ul>
 
-              <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+  </section>
 
-              <p class="blog-text">
-                Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-              <p class="blog-text">
-                Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot"></span>
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-              <p class="blog-text">
-                Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-      </ul>
-
+  <!-- Interactive Blog Detail Modal Container -->
+  <div class="modal-container" data-blog-modal-container style="display: none;">
+    <div class="overlay" data-blog-overlay></div>
+    <section class="testimonials-modal" style="max-width: 760px; width: 92%; max-height: 88vh; overflow-y: auto; padding: 24px;">
+      <button class="modal-close-btn" data-blog-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <div class="blog-modal-content-target" data-blog-modal-target></div>
     </section>
+  </div>
 
-  </article>
+</article>

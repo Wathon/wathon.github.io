@@ -1,232 +1,382 @@
 <article class="portfolio" data-page="projects">
 
-    <header>
-        <h2 class="h2 article-title">Projects</h2>
-    </header>
+  <header>
+    <h2 class="h2 article-title">Projects & Case Studies</h2>
+  </header>
 
-    <section class="projects">
+  <section class="projects">
 
-        <ul class="filter-list">
-            <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
-            <li class="filter-item"><button data-filter-btn>Data platforms</button></li>
-            <li class="filter-item"><button data-filter-btn>Enterprise systems</button></li>
-            <li class="filter-item"><button data-filter-btn>Campaigns & OCR</button></li>
-            <li class="filter-item"><button data-filter-btn>Commerce & POS</button></li>
-        </ul>
+    <ul class="filter-list">
+      <li class="filter-item"><button class="active" data-filter-btn>All</button></li>
+      <li class="filter-item"><button data-filter-btn>Lakehouse & cloud</button></li>
+      <li class="filter-item"><button data-filter-btn>Enterprise systems</button></li>
+      <li class="filter-item"><button data-filter-btn>Transaction & sync</button></li>
+    </ul>
 
-        <div class="filter-select-box">
-            <button class="filter-select" data-select>
-                <div class="select-value" data-selecct-value>Select category</div>
-                <div class="select-icon">
-                    <ion-icon name="chevron-down"></ion-icon>
-                </div>
-            </button>
-
-            <ul class="select-list">
-                <li class="select-item"><button data-select-item>All</button></li>
-                <li class="select-item"><button data-select-item>Data platforms</button></li>
-                <li class="select-item"><button data-select-item>Enterprise systems</button></li>
-                <li class="select-item"><button data-select-item>Campaigns & OCR</button></li>
-                <li class="select-item"><button data-select-item>Commerce & POS</button></li>
-            </ul>
+    <div class="filter-select-box">
+      <button class="filter-select" data-select>
+        <div class="select-value" data-selecct-value>Select category</div>
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
         </div>
+      </button>
 
-        <ul class="project-list">
+      <ul class="select-list">
+        <li class="select-item"><button data-select-item>All</button></li>
+        <li class="select-item"><button data-select-item>Lakehouse & cloud</button></li>
+        <li class="select-item"><button data-select-item>Enterprise systems</button></li>
+        <li class="select-item"><button data-select-item>Transaction & sync</button></li>
+      </ul>
+    </div>
 
-            <li class="project-item active" data-filter-item data-category="data platforms">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-2.png" alt="enterprise data lakehouse platform" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Enterprise Data Lakehouse Platform</h3>
-                    <p class="project-category">2024 - 2025 | AYA Bank PCL</p>
-                    <p class="project-summary">Enterprise analytics and reporting platform using Kubernetes, Spark, Airflow, DBT, Iceberg, Nessie, MinIO, Trino, OpenMetadata, Python, and SQL.</p>
-                </a>
-            </li>
+    <ul class="project-list">
 
-            <li class="project-item active" data-filter-item data-category="data platforms">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-1.jpg" alt="aws data pipeline and data warehouse work" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">AWS Data Pipeline & Data Warehouse Work</h3>
-                    <p class="project-category">2023 - 2024 | KBZ Bank</p>
-                    <p class="project-summary">AWS-native ETL and warehouse workflows for banking analytics and reporting with Lambda, Glue, S3, Redshift, Step Functions, Python, and SQL.</p>
-                </a>
-            </li>
+      <!-- PROJECT 1: AYA Bank Lakehouse -->
+      <li class="project-item active" data-filter-item data-category="lakehouse & cloud">
+        <a href="javascript:void(0)" data-project-card="aya-lakehouse">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-2.png" alt="Enterprise Data Lakehouse Platform" loading="lazy">
+          </figure>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-left: 10px; margin-right: 10px;">
+            <h3 class="project-title" style="margin-left: 0;">Enterprise Data Lakehouse Platform</h3>
+            <span style="background: hsla(45, 100%, 72%, 0.15); color: var(--orange-yellow-crayola); font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 500;">Flagship Case Study</span>
+          </div>
+          <p class="project-category">2024 - 2025 | AYA Bank PCL</p>
+          <p class="project-summary">On-premise Medallion Lakehouse on Kubernetes using Spark, Iceberg, Nessie, MinIO, Trino, and dbt. Solved small-file metadata bloat, container OOMs, and enabled catalog branching for banking analytics.</p>
+        </a>
 
-            <li class="project-item active" data-filter-item data-category="enterprise systems">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-7.png" alt="mgma online import-license application system" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">MGMA Online Import-License Application System</h3>
-                    <p class="project-category">Oct 2019 - Jun 2023 | ERA Communications</p>
-                    <p class="project-summary">Government-related workflow system for garment factories, MGMA, and the Ministry of Commerce, supporting submission, review, approval, dashboards, and customer data logging.</p>
-                </a>
-            </li>
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="project-modal-payload" id="payload-aya-lakehouse" style="display: none;">
+          <div class="project-detail-header">
+            <span class="project-badge">Flagship Deep-Dive</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Enterprise On-Premises Data Lakehouse Platform</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">AYA Bank PCL &bull; Oct 2024 - Aug 2025 &bull; Data Platform Engineer</p>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="enterprise systems">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-3.jpg" alt="shwe job smart worker guide" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Shwe Job Smart Worker Guide</h3>
-                    <p class="project-category">Nov 2019 - Dec 2022 | ERA Communications</p>
-                    <p class="project-summary">Worker guide application for occupational safety, health, and labor-law awareness, with backend support and mobile integration coordination.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tech-pill">Kubernetes</span>
+              <span class="tech-pill">Apache Spark</span>
+              <span class="tech-pill">Apache Iceberg</span>
+              <span class="tech-pill">Project Nessie</span>
+              <span class="tech-pill">Trino</span>
+              <span class="tech-pill">MinIO</span>
+              <span class="tech-pill">Apache Airflow</span>
+              <span class="tech-pill">dbt Core</span>
+              <span class="tech-pill">OpenMetadata</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">SQL</span>
+            </div>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="campaigns & ocr">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-5.png" alt="jti gold program" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">JTI Gold Program</h3>
-                    <p class="project-category">Dec 2020 - Jun 2022 | ERA Communications</p>
-                    <p class="project-summary">Retailer engagement and campaign platform with admin panel, multi-campaign setup, weekly games, reporting dashboard, Vue.js, Firebase, and Google OCR.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">1. Context & Architecture</h4>
+            <p style="color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              Architected an on-premise, air-gapped Medallion Lakehouse (Bronze &rarr; Silver &rarr; Gold) to modernize core banking reporting and decouple high-load analytical queries from operational transactional databases. MinIO provided S3-compatible distributed object storage, Apache Iceberg handled ACID table formats, and Trino served as the distributed federated query engine.
+            </p>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="campaigns & ocr">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-6.png" alt="union pay go for gold online campaign" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Union Pay Go for Gold Online Campaign</h3>
-                    <p class="project-category">Nov 2019 - Dec 2019 | ERA Communications</p>
-                    <p class="project-summary">Online promotion platform for UnionPay Myanmar supporting brand awareness, digital participation, backend implementation, and Google OCR integration.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">2. Production Hardships & "Why the Manual is Wrong"</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li style="margin-bottom: 8px;">
+                <strong style="color: var(--orange-yellow-crayola);">The Small File Problem in Iceberg:</strong> High-frequency batch ingestion created millions of tiny Parquet files, degrading Trino metadata lookup speeds. <em>Solution:</em> Engineered automated Spark compaction routines using bin-pack/sort strategies alongside scheduled snapshot expiration and orphan file cleanups.
+              </li>
+              <li style="margin-bottom: 8px;">
+                <strong style="color: var(--orange-yellow-crayola);">Spark Executor OOMs on Kubernetes:</strong> Heavy wide-transformations and skewed data partitions triggered JVM container evictions. <em>Solution:</em> Tuned off-heap memory headroom (`spark.memory.offHeap.size`), optimized shuffle partitions dynamically, and applied broadcast join hints.
+              </li>
+              <li>
+                <strong style="color: var(--orange-yellow-crayola);">Pipeline Staging & Catalog Governance:</strong> Deployed Project Nessie to implement Git-like data branching. Engineers could stage, validate, and test ETL runs on feature branches before atomic fast-forward merges to the `main` branch, eliminating production table lockouts.
+              </li>
+            </ul>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="commerce & pos">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-8.jpg" alt="order management system voxer" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Order Management System (Voxer)</h3>
-                    <p class="project-category">Dec 2018 - Sep 2019 | Myanmar Online Creation</p>
-                    <p class="project-summary">B2C e-commerce order management platform for sales orders, shipment, invoices, payment confirmation, master data, and system configuration.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">3. Measurable Impact</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li>Reduced batch reporting generation time from hours to minutes.</li>
+              <li>Achieved sub-second query latency for concurrent BI analytical queries over multi-terabyte datasets.</li>
+              <li>Established zero-loss ACID compliance, meeting stringent central banking audit requirements.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
 
-            <li class="project-item active" data-filter-item data-category="enterprise systems">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-9.png" alt="byscote movie streaming platform" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Byscote</h3>
-                    <p class="project-category">May 2018 - Nov 2018 | Myanmar Online Creation</p>
-                    <p class="project-summary">Movie streaming platform with content browsing, search, personalized recommendations, playback quality, web features, debugging, and performance optimization.</p>
-                </a>
-            </li>
+      <!-- PROJECT 2: KBZ Bank AWS Pipeline -->
+      <li class="project-item active" data-filter-item data-category="lakehouse & cloud">
+        <a href="javascript:void(0)" data-project-card="kbz-aws-pipeline">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-1.jpg" alt="AWS Serverless Banking Data Platform" loading="lazy">
+          </figure>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-left: 10px; margin-right: 10px;">
+            <h3 class="project-title" style="margin-left: 0;">AWS Banking Data Platform & Warehouse</h3>
+            <span style="background: hsla(45, 100%, 72%, 0.15); color: var(--orange-yellow-crayola); font-size: 11px; padding: 3px 8px; border-radius: 6px; font-weight: 500;">Flagship Case Study</span>
+          </div>
+          <p class="project-category">2023 - 2024 | KBZ Bank</p>
+          <p class="project-summary">AWS-native event-driven pipelines using Glue, Lambda, S3, Redshift, and Step Functions. Engineered idempotent ingestion, schema drift validation, and Redshift WLM concurrency optimization.</p>
+        </a>
 
-            <li class="project-item active" data-filter-item data-category="enterprise systems">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-4.png" alt="phoosar web application" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Phoosar</h3>
-                    <p class="project-category">May 2018 - Nov 2018 | Myanmar Online Creation</p>
-                    <p class="project-summary">Web application maintenance and feature development project focused on business-driven backend improvements.</p>
-                </a>
-            </li>
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="project-modal-payload" id="payload-kbz-aws-pipeline" style="display: none;">
+          <div class="project-detail-header">
+            <span class="project-badge">Flagship Deep-Dive</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Scalable AWS Banking Data Pipelines & Cloud Warehousing</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">KBZ Bank &bull; Jul 2023 - Sep 2024 &bull; Data Engineer</p>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="commerce & pos">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-2.png" alt="license provision system" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">License/Provision System</h3>
-                    <p class="project-category">May 2017 - Apr 2018 | code2LAB</p>
-                    <p class="project-summary">Licensing and provisioning service for POS applications and merchant device control using Ruby on Rails, Redis, and Amazon RDS.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tech-pill">AWS Glue (PySpark)</span>
+              <span class="tech-pill">AWS Lambda</span>
+              <span class="tech-pill">Amazon Redshift</span>
+              <span class="tech-pill">Amazon S3</span>
+              <span class="tech-pill">AWS Step Functions</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">SQL</span>
+            </div>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="commerce & pos">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-1.jpg" alt="consolidate report system" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Consolidate Report System</h3>
-                    <p class="project-category">Feb 2018 - Mar 2018 | code2LAB</p>
-                    <p class="project-summary">Online reporting system for multi-merchant POS transaction monitoring, OLTP extraction, OLAP loading, synchronization, and statistics dashboards.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">1. Context & Architecture</h4>
+            <p style="color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              Engineered serverless event-driven ingestion pipelines handling high-velocity transaction records. S3 served as the multi-tiered raw and processed data lake, AWS Step Functions orchestrated complex Glue/Lambda DAGs, and Amazon Redshift served as the enterprise analytical warehouse.
+            </p>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="enterprise systems">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-7.png" alt="ticket management system" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Ticket Management System</h3>
-                    <p class="project-category">Nov 2017 - Dec 2017 | code2LAB</p>
-                    <p class="project-summary">Issue management system for collaboration between external and internal teams, with backend workflow implementation in Ruby on Rails.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">2. Production Hardships & "Why the Manual is Wrong"</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li style="margin-bottom: 8px;">
+                <strong style="color: var(--orange-yellow-crayola);">Idempotency & Duplicate Handling:</strong> Network retries and out-of-order event delivery caused duplicate records in downstream tables. <em>Solution:</em> Implemented deterministic fingerprint hashing and staging-table merge patterns to ensure zero duplicated ledger entries.
+              </li>
+              <li style="margin-bottom: 8px;">
+                <strong style="color: var(--orange-yellow-crayola);">Redshift Workload Management (WLM) Contention:</strong> Ad-hoc analytical queries locked out scheduled ETL write operations. <em>Solution:</em> Tuned WLM memory allocation queues, applied compound distribution and sort keys based on query access patterns, and automated vacuum/analyze routines.
+              </li>
+              <li>
+                <strong style="color: var(--orange-yellow-crayola);">Schema Drift Validation:</strong> Source changes broke batch jobs silently. <em>Solution:</em> Engineered pre-ingestion validation rules in Lambda with automated dead-letter routing and alerts.
+              </li>
+            </ul>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="commerce & pos">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-6.png" alt="membership device integration system" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Membership Device Integration System</h3>
-                    <p class="project-category">Sep 2017 - Oct 2017 | code2LAB</p>
-                    <p class="project-summary">Java SDK development for integrating POS systems with Vaap membership devices and supporting device communication workflows.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">3. Measurable Impact</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li>Maintained a 99.9% data delivery SLA for compliance and regulatory reporting.</li>
+              <li>Eliminated duplicate transaction records and pipeline silent failures.</li>
+              <li>Accelerated critical financial dashboard load speeds across multiple business divisions.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
 
-            <li class="project-item active" data-filter-item data-category="data platforms">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-3.jpg" alt="data sync with etl breadtalk" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Data Sync with ETL (BreadTalk)</h3>
-                    <p class="project-category">Mar 2017 - Jun 2017 | code2LAB</p>
-                    <p class="project-summary">ETL system for extracting, transforming, loading, monitoring, cleaning, parsing, and synchronizing OLTP data into OLAP/reporting environments.</p>
-                </a>
-            </li>
+      <!-- PROJECT 3: MGMA Import License -->
+      <li class="project-item active" data-filter-item data-category="enterprise systems">
+        <a href="javascript:void(0)" data-project-card="mgma-system">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-7.png" alt="MGMA Import-License Application System" loading="lazy">
+          </figure>
+          <h3 class="project-title">MGMA Import-License Application System</h3>
+          <p class="project-category">Oct 2019 - Jun 2023 | ERA Myanmar &bull; Ministry of Commerce</p>
+          <p class="project-summary">Government-level regulatory workflow platform supporting digital submissions, multi-tier approvals, audit trails, and data logging for garment manufacturers nationwide.</p>
+        </a>
 
-            <li class="project-item active" data-filter-item data-category="commerce & pos">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-5.png" alt="fuel management system global fms" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Fuel Management System (Global FMS)</h3>
-                    <p class="project-category">May 2016 - Feb 2017 | Global Wave Technology</p>
-                    <p class="project-summary">Fuel station management system covering sales, payments, tank inventory, assignments, accounts, reports, promotions, loyalty, and dashboards.</p>
-                </a>
-            </li>
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="project-modal-payload" id="payload-mgma-system" style="display: none;">
+          <div class="project-detail-header">
+            <span class="project-badge">Enterprise Workflow Platform</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">MGMA Online Import-License Application & Audit System</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">ERA Myanmar &bull; 2019 - 2023 &bull; Senior Software Engineer</p>
+          </div>
 
-            <li class="project-item active" data-filter-item data-category="commerce & pos">
-                <a href="#">
-                    <figure class="project-img">
-                        <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
-                        <img src="./assets/images/project-8.jpg" alt="online reporting system" loading="lazy">
-                    </figure>
-                    <h3 class="project-title">Online Reporting System</h3>
-                    <p class="project-category">May 2015 - May 2016 | Global Wave Technology</p>
-                    <p class="project-summary">Consolidated merchant branch reporting platform with flexible user management, dynamic dashboards, and data synchronization.</p>
-                </a>
-            </li>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tech-pill">Ruby on Rails</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">Redis</span>
+              <span class="tech-pill">REST APIs</span>
+              <span class="tech-pill">Docker</span>
+              <span class="tech-pill">Nginx</span>
+              <span class="tech-pill">Linux</span>
+            </div>
+          </div>
 
-        </ul>
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Key Engineering Highlights</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li>Replaced multi-week physical paper regulatory submissions with a digitized multi-tenant portal connecting factory representatives, MGMA administrators, and the Ministry of Commerce.</li>
+              <li>Engineered immutable audit logging and role-based access control (RBAC) to ensure tamper-proof approval chains.</li>
+              <li>Optimized PostgreSQL indexing and asynchronous background jobs for heavy PDF generation and reporting dashboards.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
 
+      <!-- PROJECT 4: JTI & UnionPay Campaigns & OCR -->
+      <li class="project-item active" data-filter-item data-category="enterprise systems">
+        <a href="javascript:void(0)" data-project-card="retail-ocr-platform">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-5.png" alt="Retailer Engagement & OCR Intelligence Platform" loading="lazy">
+          </figure>
+          <h3 class="project-title">Retailer Engagement & OCR Intelligence Platform</h3>
+          <p class="project-category">Dec 2020 - Jun 2022 | ERA Myanmar &bull; JTI & UnionPay</p>
+          <p class="project-summary">High-throughput retail engagement platform processing millions of merchant receipts using Google Cloud OCR, automated fraud filtering, and real-time incentive dashboards.</p>
+        </a>
+
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="project-modal-payload" id="payload-retail-ocr-platform" style="display: none;">
+          <div class="project-detail-header">
+            <span class="project-badge">High-Throughput Verification Engine</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Retailer Engagement & OCR Intelligence Platform</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">ERA Myanmar &bull; 2020 - 2022 &bull; Senior Software Engineer</p>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Google Cloud Vision OCR</span>
+              <span class="tech-pill">Firebase</span>
+              <span class="tech-pill">Vue.js</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Key Engineering Highlights</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li>Engineered an automated receipt parsing engine with custom fuzzy matching algorithms to validate merchant purchases and prevent duplicate submission fraud.</li>
+              <li>Architected asynchronous image ingestion queues to handle nationwide campaign spikes without backend throttling.</li>
+              <li>Delivered real-time reward allocation and merchant analytics dashboards for enterprise brand managers.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- PROJECT 5: Distributed POS Sync & ETL -->
+      <li class="project-item active" data-filter-item data-category="transaction & sync">
+        <a href="javascript:void(0)" data-project-card="pos-sync-etl">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-3.jpg" alt="Distributed POS Multi-Branch Transaction Sync & OLAP ETL" loading="lazy">
+          </figure>
+          <h3 class="project-title">POS Transaction Synchronization & OLAP ETL</h3>
+          <p class="project-category">2017 - 2018 | code2LAB &bull; BreadTalk</p>
+          <p class="project-summary">Multi-merchant POS data pipeline extracting real-time OLTP retail transactions into consolidated OLAP reporting warehouses with automated reconciliation.</p>
+        </a>
+
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="project-modal-payload" id="payload-pos-sync-etl" style="display: none;">
+          <div class="project-detail-header">
+            <span class="project-badge">Data Sync & ETL System</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Distributed POS Multi-Branch Sync & OLAP Warehouse</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">code2LAB &bull; 2017 - 2018 &bull; Web & Data Systems Engineer</p>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tech-pill">Ruby on Rails</span>
+              <span class="tech-pill">PostgreSQL</span>
+              <span class="tech-pill">Amazon RDS</span>
+              <span class="tech-pill">Redis</span>
+              <span class="tech-pill">SOAP / REST</span>
+              <span class="tech-pill">SFTP & Cron</span>
+            </div>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Key Engineering Highlights</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li>Engineered resilient offline-to-online transaction sync mechanisms for branch terminals with unstable internet connectivity.</li>
+              <li>Built nightly ETL reconciliation jobs to extract, transform, and aggregate raw OLTP sales data into OLAP analytical schemas for executive financial auditing.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <!-- PROJECT 6: Industrial Fuel Management & Telemetry -->
+      <li class="project-item active" data-filter-item data-category="transaction & sync">
+        <a href="javascript:void(0)" data-project-card="fuel-management-system">
+          <figure class="project-img">
+            <div class="project-item-icon-box"><ion-icon name="eye-outline"></ion-icon></div>
+            <img src="./assets/images/project-6.png" alt="Industrial Fuel Management & Telemetry Platform" loading="lazy">
+          </figure>
+          <h3 class="project-title">Fuel Station Management & Telemetry System</h3>
+          <p class="project-category">2015 - 2017 | Global Wave Technology</p>
+          <p class="project-summary">Industrial fuel station telemetry and consolidated accounting platform tracking real-time pump transactions, underground tank inventory, and multi-branch ledgers.</p>
+        </a>
+
+        <!-- Hidden Detail Payload for Modal -->
+        <div class="project-modal-payload" id="payload-fuel-management-system" style="display: none;">
+          <div class="project-detail-header">
+            <span class="project-badge">Industrial Telemetry & Accounting</span>
+            <h3 class="h3" style="color: var(--white-2); margin-top: 8px;">Fuel Station Telemetry & Consolidated Reporting Platform</h3>
+            <p style="color: var(--orange-yellow-crayola); font-size: var(--fs-6); margin-top: 4px;">Global Wave Technology &bull; 2015 - 2017 &bull; Junior Software Engineer</p>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Tech Stack</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="tech-pill">C#/.NET</span>
+              <span class="tech-pill">Microsoft SQL Server</span>
+              <span class="tech-pill">Stored Procedures</span>
+              <span class="tech-pill">Hardware Telemetry</span>
+            </div>
+          </div>
+
+          <div class="project-detail-section" style="margin-top: 18px;">
+            <h4 class="h4" style="color: var(--white-1); margin-bottom: 8px;">Key Engineering Highlights</h4>
+            <ul style="list-style: disc; padding-left: 20px; color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6;">
+              <li>Developed real-time serial hardware logging for automated dispenser pump calibration and fuel tank level monitoring.</li>
+              <li>Wrote high-performance SQL Server stored procedures for multi-station shift reconciliation and financial auditing.</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+
+    <!-- Career Foundations & Systems Archive Accordion/Box -->
+    <div style="margin-top: 35px; background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 14px; padding: 22px;">
+      <h3 class="h3" style="color: var(--white-2); font-size: var(--fs-4); margin-bottom: 8px;">Earlier Software Engineering & Systems Foundations (2015 &ndash; 2019)</h3>
+      <p style="color: var(--light-gray); font-size: var(--fs-6); line-height: 1.6; margin-bottom: 15px;">
+        Prior to specializing in enterprise Data Platforms and Lakehouses, I spent 5 years building production backend microservices, e-commerce engines, POS device SDKs, and relational databases. This solid software engineering background forms the core foundation for how I build robust, tested, and maintainable data systems today.
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
+        <div style="background: var(--eerie-black-1); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--jet);">
+          <strong style="color: var(--orange-yellow-crayola); font-size: var(--fs-6);">Voxer E-Commerce & Order Management</strong>
+          <p style="color: var(--light-gray-70); font-size: var(--fs-7); margin-top: 4px;">Ruby on Rails, MySQL, EC2, RDS &bull; Order workflows, invoicing, shipment logic.</p>
+        </div>
+        <div style="background: var(--eerie-black-1); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--jet);">
+          <strong style="color: var(--orange-yellow-crayola); font-size: var(--fs-6);">POS Device SDK & Licensing Engine</strong>
+          <p style="color: var(--light-gray-70); font-size: var(--fs-7); margin-top: 4px;">Java, Rails, Redis &bull; Vaap hardware communication and device provisioning.</p>
+        </div>
+        <div style="background: var(--eerie-black-1); padding: 12px 16px; border-radius: 8px; border: 1px solid var(--jet);">
+          <strong style="color: var(--orange-yellow-crayola); font-size: var(--fs-6);">Byscote Streaming & Admin Platform</strong>
+          <p style="color: var(--light-gray-70); font-size: var(--fs-7); margin-top: 4px;">Web backend services, caching layer, dynamic recommendation queries.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Interactive Project Detail Modal Container -->
+  <div class="modal-container" data-project-modal-container style="display: none;">
+    <div class="overlay" data-project-overlay></div>
+    <section class="testimonials-modal" style="max-width: 720px; width: 90%; max-height: 88vh; overflow-y: auto; padding: 24px;">
+      <button class="modal-close-btn" data-project-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <div class="project-modal-content-target" data-project-modal-target></div>
     </section>
+  </div>
 
 </article>

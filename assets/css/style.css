@@ -1975,3 +1975,52 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/*-----------------------------------*\
+  #HIGH-SIGNAL ENHANCEMENTS
+\*-----------------------------------*/
+
+.tech-pill {
+  color: var(--light-gray);
+  font-size: 11px;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 6px;
+  padding: 4px 9px;
+  font-weight: var(--fw-400);
+}
+
+.project-badge {
+  display: inline-block;
+  background: hsla(45, 100%, 72%, 0.15);
+  color: var(--orange-yellow-crayola);
+  font-size: 11px;
+  font-weight: var(--fw-500);
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.testimonials-modal code {
+  background: var(--onyx);
+  color: var(--orange-yellow-crayola);
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  font-family: monospace;
+}
+
+.testimonials-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.testimonials-modal::-webkit-scrollbar-track {
+  background: var(--eerie-black-2);
+}
+
+.testimonials-modal::-webkit-scrollbar-thumb {
+  background: var(--jet);
+  border-radius: 10px;
+}
+
